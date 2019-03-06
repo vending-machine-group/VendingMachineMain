@@ -1,1 +1,46 @@
+package vendingmachine;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Drink {
+    //All of the lists correlate, i.e. all of the first indexes refer to the same drink item
+    //lists are seperated into the drinks name, its cost, and its supply
+    List<String> drinkList = new ArrayList<String>();
+    List<Double> drinkPrice = new ArrayList<Double>();
+    List<Integer> drinkStock = new ArrayList<Integer>();
+    
+    //temporary drink fill in
+    public Drink(){
+        drinkList.add("1");
+        drinkPrice.add(1.00);
+        drinkStock.add(1);
+    }
+    
+    //method to get price
+    public Double getPrice(Integer indexOfDrink){
+        //uses the index of the selected drink to find the price in the corresponding price list
+        return drinkPrice.get(indexOfDrink);
+    }
+    
+    //return the requested drink name
+    //used to populate the vending machine on start-up
+    public String getDrinkName(Integer indexOfDrink){
+        //return through index of drink
+        return drinkList.get(indexOfDrink);        
+    }
+    
+    //lower the amount of drink available in the stock after it has been purchased
+    public Boolean buyDrink(Integer indexOfDrink, Integer amountOfDrinkBought){
+        //boolean to check whether the opeartion worked
+        Boolean success = false;
+        
+        //if statement validates that enough drink is available to purchase
+        if(amountOfDrinkBought <= drinkStock.get(indexOfDrink)){
+            //sets the value of the drink being bought to be lowered by the amount that was bought
+        drinkStock.set(indexOfDrink, (drinkStock.get(indexOfDrink)-amountOfDrinkBought));
+        //possibly return a successful purchase somewhere
+        }
+        return success;
+    }
+}
 
