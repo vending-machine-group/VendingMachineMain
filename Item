@@ -1,1 +1,45 @@
+package vendingmachine;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Item {
+    //create the food object for use 
+        private Food food = new Food();
+        private Drink drink = new Drink();
+        private Miscellaneous miscellaneous = new Miscellaneous();
+        
+        
+        //Use radio buttons to find which value is selected, this can be done in the vedning machine frame
+        //Have the first radio button correlate to the value 0, and so on
+        
+   //enter the index of the food and return its price
+    public Double getFoodPrice(Integer indexOfFood){
+        //call the getPrice method from food to get the price of the specified item
+        return food.getPrice(indexOfFood);
+       }
+    
+    //method to get the food name, used to populate the machine on startup
+    public String getFoodName(Integer indexOfFood){
+        return food.getFoodName(indexOfFood);
+    }
+    
+    //call to remove a purchased food from stock
+    public Boolean buyFood(Integer indexOfFood, Integer amountOfFoodBought){
+        //takes in index of purchase and amount of items purchased
+        return food.buyFood(indexOfFood, amountOfFoodBought);
+    }
+    
+    //enter the index of drink to find the price
+    public Double getDrinkPrice(Integer indexOfDrink){
+        //call the getPrice method from drink to get the price of the specified item
+        return food.getPrice(indexOfDrink);
+    }
+    
+    //get the price of misc from its index
+    public Double getMiscellaneousPrice(Integer indexOfMiscellaneous){
+        //call the getPrice method from Misc to get the price of the specified item
+        return food.getPrice(indexOfMiscellaneous);
+    }
+    
+}
 
