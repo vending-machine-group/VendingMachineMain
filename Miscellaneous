@@ -1,0 +1,47 @@
+package vendingmachine;
+import java.util.ArrayList;
+import java.util.List;
+
+
+
+public class Miscellaneous {
+ //All of the lists correlate, i.e. all of the first indexes refer to the same Miscellaneous item
+    //lists are seperated into the Miscellaneous name, its cost, and its supply
+    List<String> miscellaneousList = new ArrayList<String>();
+    List<Double> miscellaneousPrice = new ArrayList<Double>();
+    List<Integer> miscellaneousStock = new ArrayList<Integer>();
+    
+    //temporary miscellaneous fill in
+    public Miscellaneous(){
+        miscellaneousList.add("1");
+        miscellaneousPrice.add(1.00);
+        miscellaneousStock.add(1);
+    }
+    
+    //method to get price
+    public Double getPrice(Integer indexOfMiscellaneous){
+        //uses the index of the selected Miscellaneous to find the price in the corresponding price list
+        return miscellaneousPrice.get(indexOfMiscellaneous);
+    }
+    
+    //return the requested Miscellaneous name
+    //used to populate the vending machine on start-up
+    public String getMiscellaneousName(Integer indexOfMiscellaneous){
+        //return through index of miscellaneous
+        return miscellaneousList.get(indexOfMiscellaneous);        
+    }
+    
+    //lower the amount of Miscellaneous available in the stock after it has been purchased
+    public Boolean buyMiscellaneous(Integer indexOfMiscellaneous, Integer amountOfMiscellaneousBought){
+        //boolean to check whether the opeartion worked
+        Boolean success = false;
+        
+        //if statement validates that enough Miscellaneous is available to purchase
+        if(amountOfMiscellaneousBought <= miscellaneousStock.get(indexOfMiscellaneous)){
+            //sets the value of the Miscellaneous being bought to be lowered by the amount that was bought
+        miscellaneousStock.set(indexOfMiscellaneous, (miscellaneousStock.get(indexOfMiscellaneous)-amountOfMiscellaneousBought));
+        //possibly return a successful purchase somewhere
+        }
+        return success;
+    }   
+}
