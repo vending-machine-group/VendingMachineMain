@@ -1,1 +1,47 @@
+package vendingmachine;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Food {
+    //All of the lists correlate, i.e. all of the first indexes refer to the same food item
+    //lists are seperated into the foods name, its cost, and its supply
+    List<String> foodList = new ArrayList<String>();
+    List<Double> foodPrice = new ArrayList<Double>();
+    List<Integer> foodStock = new ArrayList<Integer>();
+    
+    //constructor will fill this stuff in, currently temporary filler
+    public Food(){
+        foodList.add("1");
+        foodPrice.add(1.00);
+        foodStock.add(1);
+    }
+    
+    //method to get price
+    public Double getPrice(Integer indexOfFood){
+        //uses the index of the selected food to find the price in the corresponding price list
+        return foodPrice.get(indexOfFood);
+    }
+    
+    //return the requested food name
+    //used to populate the vending machine on start-up
+    public String getFoodName(Integer indexOfFood){
+        //return through index of food
+        return foodList.get(indexOfFood);      
+    }
+    
+    //lower the amount of food available in the stock after it has been purchased
+    public Boolean buyFood(Integer indexOfFood, Integer amountOfFoodBought){
+        //boolean to check whether the opeartion worked
+        Boolean success = false;
+        
+        //if statement validates that enough food is available to purchase
+        if(amountOfFoodBought <= foodStock.get(indexOfFood)){
+            //sets the value of the food being bought to be lowered by the amount that was bought
+        foodStock.set(indexOfFood, (foodStock.get(indexOfFood)-amountOfFoodBought));
+        //possibly return a successful purchase somewhere
+        }
+        return success;
+    }
+    
+}
 
