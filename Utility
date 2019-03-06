@@ -27,6 +27,5 @@ public class Utilities {
     public Double getChange() {
         return Change;
     }
-
-
+    
 }
