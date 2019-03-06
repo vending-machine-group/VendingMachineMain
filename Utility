@@ -3,15 +3,15 @@ package vendingmachine;
 public class Utilities {
     
     private Double Price;
-    private Double cash;
-    private Double change;
+    private Double Cash;
+    private Double Change;
  
     public Boolean makePurchase(double cash){
-        this.cash+=cash;
+        this.Cash+=Cash;
     Boolean success = false;
 
-        if(cash>=Price){
-        change=cash-Price;
+        if(Cash>=Price){
+        Change=Cash-Price;
         success = true;}
     return success;
     }
@@ -25,11 +25,8 @@ public class Utilities {
     }
 
     public Double getChange() {
-        return change;
+        return Change;
     }
 
-    public void setChange(Double change) {
-        this.change = change;
-    }
 
 }
