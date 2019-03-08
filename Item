@@ -30,7 +30,7 @@ public class Item {
     //enter the index of drink to find the price
     public Double getDrinkPrice(Integer indexOfDrink){
         //call the getPrice method from drink to get the price of the specified item
-        return food.getPrice(indexOfDrink);
+        return drink.getPrice(indexOfDrink);
     }
      //method to get the drink name, used to populate the machine on startup
     public String getDrinkName(Integer indexOfDrink){
@@ -40,23 +40,23 @@ public class Item {
     //call to remove a purchased drinks from stock
     public Boolean buyDrinks(Integer indexOfDrink, Integer amountOfDrinksBought){
         //takes in index of purchase and amount of items purchased
-        return food.buyFood(indexOfDrink, amountOfDrinksBought);
+        return drink.buyFood(indexOfDrink, amountOfDrinksBought);
     }
     
     //get the price of misc from its index
     public Double getMiscellaneousPrice(Integer indexOfMiscellaneous){
         //call the getPrice method from Misc to get the price of the specified item
-        return food.getPrice(indexOfMiscellaneous);
+        return miscellaneous.getPrice(indexOfMiscellaneous);
     }
     
      //method to get the misc. name, used to populate the machine on startup
     public String getMiscellaneousName(Integer indexOfMiscellaneous){
-        return food.getFoodName(indexOfMiscellaneous);
+        return miscellaneous.getFoodName(indexOfMiscellaneous);
     }
     
     //call to remove a purchased misc. stuff
     public Boolean buyMiscellaneous(Integer indexOfMiscellaneous, Integer amountOfFoodBought){
         //takes in index of purchase and amount of items purchased
-        return food.buyFood(indexOfMiscellaneous, amountOfFoodBought);
+        return miscellaneous.buyFood(indexOfMiscellaneous, amountOfFoodBought);
     }
 }
