@@ -1,6 +1,4 @@
 package vendingmachine;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Item {
     //create the food object for use 
@@ -34,6 +32,16 @@ public class Item {
         //call the getPrice method from drink to get the price of the specified item
         return food.getPrice(indexOfDrink);
     }
+     //method to get the drink name, used to populate the machine on startup
+    public String getDrinkName(Integer indexOfDrink){
+        return drink.getDrinkName(indexOfDrink);
+    }
+    
+    //call to remove a purchased drinks from stock
+    public Boolean buyDrinks(Integer indexOfDrink, Integer amountOfDrinksBought){
+        //takes in index of purchase and amount of items purchased
+        return food.buyFood(indexOfDrink, amountOfDrinksBought);
+    }
     
     //get the price of misc from its index
     public Double getMiscellaneousPrice(Integer indexOfMiscellaneous){
@@ -41,5 +49,14 @@ public class Item {
         return food.getPrice(indexOfMiscellaneous);
     }
     
+     //method to get the misc. name, used to populate the machine on startup
+    public String getMiscellaneousName(Integer indexOfMiscellaneous){
+        return food.getFoodName(indexOfMiscellaneous);
+    }
+    
+    //call to remove a purchased misc. stuff
+    public Boolean buyMiscellaneous(Integer indexOfMiscellaneous, Integer amountOfFoodBought){
+        //takes in index of purchase and amount of items purchased
+        return food.buyFood(indexOfMiscellaneous, amountOfFoodBought);
+    }
 }
-
