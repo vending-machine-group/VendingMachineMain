@@ -40,7 +40,7 @@ public class Item {
     //call to remove a purchased drinks from stock
     public Boolean buyDrinks(Integer indexOfDrink, Integer amountOfDrinksBought){
         //takes in index of purchase and amount of items purchased
-        return drink.buyFood(indexOfDrink, amountOfDrinksBought);
+        return drink.buyDrink(indexOfDrink, amountOfDrinksBought);
     }
     
     //get the price of misc from its index
@@ -51,12 +51,12 @@ public class Item {
     
      //method to get the misc. name, used to populate the machine on startup
     public String getMiscellaneousName(Integer indexOfMiscellaneous){
-        return miscellaneous.getFoodName(indexOfMiscellaneous);
+        return miscellaneous.getMiscellaneousName(indexOfMiscellaneous);
     }
     
     //call to remove a purchased misc. stuff
-    public Boolean buyMiscellaneous(Integer indexOfMiscellaneous, Integer amountOfFoodBought){
+    public Boolean buyMiscellaneous(Integer indexOfMiscellaneous, Integer amountOfMiscellaneousBought){
         //takes in index of purchase and amount of items purchased
-        return miscellaneous.buyFood(indexOfMiscellaneous, amountOfFoodBought);
+        return miscellaneous.buyMiscellaneous(indexOfMiscellaneous, amountOfMiscellaneousBought);
     }
 }
