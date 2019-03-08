@@ -15,7 +15,7 @@ public class Item {
         
         //function is called to create instances of the item class
         //only allows one item to be created, item is also static so many objects reference one item
-        public Item createItem(){
+        public static Item createItem(){
         //ensure item is not already made
             if(item == null){
                 item = new Item();
