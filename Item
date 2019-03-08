@@ -23,8 +23,7 @@ public class Item {
             //return the created singleton item
             return item;
         }
-        
-        
+           
         //Use radio buttons to find which value is selected, this can be done in the vedning machine frame
         //Have the first radio button correlate to the value 0, and so on
    //enter the index of the food and return its price
