@@ -5,9 +5,9 @@ import java.util.List;
 public class Food {
     //All of the lists correlate, i.e. all of the first indexes refer to the same food item
     //lists are seperated into the foods name, its cost, and its supply
-    List<String> foodList = new ArrayList<String>();
-    List<Double> foodPrice = new ArrayList<Double>();
-    List<Integer> foodStock = new ArrayList<Integer>();
+    List<String> foodList = new ArrayList<>();
+    List<Double> foodPrice = new ArrayList<>();
+    List<Integer> foodStock = new ArrayList<>();
     
     //constructor will fill this stuff in, currently temporary filler
     public Food(){
