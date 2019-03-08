@@ -7,9 +7,9 @@ import java.util.List;
 public class Miscellaneous {
  //All of the lists correlate, i.e. all of the first indexes refer to the same Miscellaneous item
     //lists are seperated into the Miscellaneous name, its cost, and its supply
-    List<String> miscellaneousList = new ArrayList<String>();
-    List<Double> miscellaneousPrice = new ArrayList<Double>();
-    List<Integer> miscellaneousStock = new ArrayList<Integer>();
+    List<String> miscellaneousList = new ArrayList<>();
+    List<Double> miscellaneousPrice = new ArrayList<>();
+    List<Integer> miscellaneousStock = new ArrayList<>();
     
     //temporary miscellaneous fill in
     public Miscellaneous(){
