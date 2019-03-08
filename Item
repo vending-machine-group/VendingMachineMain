@@ -5,11 +5,28 @@ public class Item {
         private Food food = new Food();
         private Drink drink = new Drink();
         private Miscellaneous miscellaneous = new Miscellaneous();
+        //allow for only one item that all the classes use
+        private static Item item;
+        
+        //constructor for item that allows only one item to be made
+        private Item(){
+            
+        }
+        
+        //function is called to create instances of the item class
+        //only allows one item to be created, item is also static so many objects reference one item
+        public Item createItem(){
+        //ensure item is not already made
+            if(item == null){
+                item = new Item();
+            }
+            //return the created singleton item
+            return item;
+        }
         
         
         //Use radio buttons to find which value is selected, this can be done in the vedning machine frame
         //Have the first radio button correlate to the value 0, and so on
-        
    //enter the index of the food and return its price
     public Double getFoodPrice(Integer indexOfFood){
         //call the getPrice method from food to get the price of the specified item
@@ -60,3 +77,4 @@ public class Item {
         return miscellaneous.buyMiscellaneous(indexOfMiscellaneous, amountOfMiscellaneousBought);
     }
 }
+
